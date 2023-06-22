@@ -25,7 +25,7 @@ RUN ./mvnw package -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 # Second stage, based on OpenJDK, smaller than the build one
-FROM adoptopenjdk:17-jdk-hotspot as runtime
+FROM eclipse-temurin:17-jdk as runtime
 
 ARG DEPENDENCY=/app/target/dependency
 
