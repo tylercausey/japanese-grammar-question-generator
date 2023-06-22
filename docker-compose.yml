@@ -1,0 +1,29 @@
+version: '3'
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "9095:80"
+    networks:
+      - japanese-grammar-question-generator-network
+
+  backend:
+    build: ./backend/grammarQuestionGenerator
+    ports:
+      - "8080:8080"
+    networks:
+      - japanese-grammar-question-generator-network
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: grammar-question-generator
+      POSTGRES_USER: tylercausey
+      POSTGRES_PASSWORD: alpaca
+    networks:
+      - japanese-grammar-question-generator-network
+
+networks:
+  japanese-grammar-question-generator-network:

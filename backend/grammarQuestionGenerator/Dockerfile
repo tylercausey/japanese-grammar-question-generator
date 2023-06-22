@@ -37,5 +37,11 @@ COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
 
+# Set the environment variables for connecting to the PostgreSQL container
+# ENV SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/grammar-question-generator
+ENV SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/grammar-question-generator
+ENV SPRING_DATASOURCE_USERNAME=tylercausey
+ENV SPRING_DATASOURCE_PASSWORD=alpaca
+
 # Run the application
-ENTRYPOINT ["java","-cp","app:app/lib/*","com.ltp.grammarquestiongenerator.main"]
+ENTRYPOINT ["java","-cp","app:app/lib/*","com.ltp.grammarQuestionGenerator.GrammarQuestionGeneratorApplication"]
