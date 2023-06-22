@@ -12,15 +12,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Build the Docker image for backend
-        run: |
-          cd question-generator-react-springboot/backend/grammarQuestionGenerator
-          docker build . --file Dockerfile --tag japanese-grammar-question-generator-backend:$(date +%s)
-
       - name: Build the Docker image for frontend
         run: |
           cd question-generator-react-springboot/frontend
           docker build . --file Dockerfile --tag japanese-grammar-question-generator-frontend:$(date +%s)
+      
+      - name: Build the Docker image for backend
+        run: |
+          cd question-generator-react-springboot/backend/grammarQuestionGenerator
+          docker build . --file Dockerfile --tag japanese-grammar-question-generator-backend:$(date +%s)
           
       - name: Login to DockerHub
         uses: docker/login-action@v1 
