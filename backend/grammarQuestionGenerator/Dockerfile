@@ -1,5 +1,6 @@
 # Start with a base image containing Java runtime
-FROM adoptopenjdk:17-jdk-hotspot as build
+FROM eclipse-temurin:17-jdk as build
+
 
 # Make the project directory in the Docker image
 WORKDIR /app
