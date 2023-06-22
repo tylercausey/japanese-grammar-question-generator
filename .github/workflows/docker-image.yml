@@ -15,12 +15,12 @@ jobs:
       - name: Build the Docker image for frontend
         run: |
           cd frontend/
-          docker build . --file Dockerfile --tag japanese-grammar-question-generator-frontend:$(date +%s)
+          docker build . --file Dockerfile --tag japanese-grammar-question-generator-frontend:latest
       
       - name: Build the Docker image for backend
         run: |
           cd backend/grammarQuestionGenerator
-          docker build . --file Dockerfile --tag japanese-grammar-question-generator-backend:$(date +%s)
+          docker build . --file Dockerfile --tag japanese-grammar-question-generator-backend:latest
           
       - name: Login to DockerHub
         uses: docker/login-action@v1 
@@ -30,10 +30,10 @@ jobs:
 
       - name: Push the Docker image for backend
         run: |
-          docker push japanese-grammar-question-generator-backend:$(date +%s)
+          docker push japanese-grammar-question-generator-backend:latest
 
       - name: Push the Docker image for frontend
         run: |
-          docker push japanese-grammar-question-generator-frontend:$(date +%s)
+          docker push japanese-grammar-question-generator-frontend:latest
 
 
