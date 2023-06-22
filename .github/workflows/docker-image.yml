@@ -1,0 +1,39 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build the Docker image for backend
+        run: |
+          cd question-generator-react-springboot/backend/grammarQuestionGenerator
+          docker build . --file Dockerfile --tag japanese-grammar-question-generator-backend:$(date +%s)
+
+      - name: Build the Docker image for frontend
+        run: |
+          cd question-generator-react-springboot/frontend
+          docker build . --file Dockerfile --tag japanese-grammar-question-generator-frontend:$(date +%s)
+          
+      - name: Login to DockerHub
+        uses: docker/login-action@v1 
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Push the Docker image for backend
+        run: |
+          docker push japanese-grammar-question-generator-backend:$(date +%s)
+
+      - name: Push the Docker image for frontend
+        run: |
+          docker push japanese-grammar-question-generator-frontend:$(date +%s)
+
+
