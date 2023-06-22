@@ -1,0 +1,49 @@
+/* general header styling */
+header {
+    width: auto;
+    height:25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 10% 0 10%;
+}
+
+#headerContent {
+    display: flex;
+    align-items: center;
+    width: 450px;
+    height: auto;
+    justify-content: space-between;
+}
+
+/* header logo styling */
+#headerText {
+    color: var(--mochi-pink);
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 5.5rem;
+}
+
+.dot {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+#pinkDot {
+    background-color: #FFC5E4; /* lighter shade of pink */
+    box-shadow:0 0 0 8px var(--mochi-pink); /* darker shade of pink */
+}
+
+#greenDot {
+    background-color: #BBFCB0; /* lighter shade of green */
+    box-shadow: 0 0 0 8px var(--mochi-green); /* darker shade of green */
+}
+
+#subHeader {
+    color: var(--mochi-green);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 0;
+}

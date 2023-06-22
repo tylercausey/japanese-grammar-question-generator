@@ -1,0 +1,20 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Noto+Sans+JP&display=swap');
+
+/* general styling */
+body {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  background-color: var(--mochi-cream);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+}
+:root {
+  /* Colors */
+  --mochi-pink: #ff7ec4;
+  --mochi-green: #8bde7e;
+  --mochi-cream: #fffcf2;
+}

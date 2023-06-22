@@ -1,0 +1,17 @@
+/* general footer styling */
+footer {
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:20vh;
+    background-color: var(--mochi-green);
+}
+
+#siteBy {
+    font-family: 'Mochiy Pop One', sans-serif;
+    color: var(--mochi-cream);
+    font-weight: 300;
+}
+
