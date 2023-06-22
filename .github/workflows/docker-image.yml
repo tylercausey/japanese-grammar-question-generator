@@ -14,12 +14,12 @@ jobs:
 
       - name: Build the Docker image for frontend
         run: |
-          cd japanese-grammar-question-generator/frontend/
+          cd frontend/
           docker build . --file Dockerfile --tag japanese-grammar-question-generator-frontend:$(date +%s)
       
       - name: Build the Docker image for backend
         run: |
-          cd japanese-grammar-question-generator/backend/grammarQuestionGenerator
+          cd backend/grammarQuestionGenerator
           docker build . --file Dockerfile --tag japanese-grammar-question-generator-backend:$(date +%s)
           
       - name: Login to DockerHub
