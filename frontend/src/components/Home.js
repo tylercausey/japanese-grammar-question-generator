@@ -27,7 +27,7 @@ const Home = () => {
     // fetches grammar points from the database
     async function fetchGrammarPointsInfo() {
         try {
-            const response = await fetch(`http://localhost:8080/grammarPoint/all`);
+            const response = await fetch(`http://mochi-japanese-grammar-question-generator.com:8080/grammarPoint/all`);
             const data = await response.json();
             const grammarPointsArray = [];
             const jlptLevelArray = [];

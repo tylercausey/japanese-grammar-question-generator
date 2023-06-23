@@ -43,7 +43,7 @@ const GrammarPointsList = () => {
     // fetches grammar points from the database 
     async function fetchGrammarPointsInfo() {
         try {
-            const response = await fetch(`http://localhost:8080/grammarPoint/all`);
+            const response = await fetch(`http://mochi-japanese-grammar-question-generator.com:8080/grammarPoint/all`);
             const data = await response.json();
             setGrammarPoints(data);
         } catch(error) {
@@ -55,7 +55,7 @@ const GrammarPointsList = () => {
     async function updateSelectedGrammarPoint (event, selectedGrammarPoint) {
         event.preventDefault()
         try {
-            const response = await fetch(`http://localhost:8080/grammarPoint/${selectedGrammarPoint.id}`, {
+            const response = await fetch(`http://mochi-japanese-grammar-question-generator.com:8080/grammarPoint/${selectedGrammarPoint.id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"
@@ -74,7 +74,7 @@ const GrammarPointsList = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:8080/grammarPoint`, {
+            const response = await fetch(`http://mochi-japanese-grammar-question-generator.com:8080/grammarPoint`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -99,7 +99,7 @@ const GrammarPointsList = () => {
     // deletes selected grammar point from the database
     async function deleteGrammarPoint(id) {
         try {
-            const response = await fetch(`http://localhost:8080/grammarPoint/${id}`, {
+            const response = await fetch(`http://mochi-japanese-grammar-question-generator.com:8080/grammarPoint/${id}`, {
                 method: "DELETE",
             });
             if (response.ok) {

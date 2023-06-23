@@ -1,12 +1,11 @@
-import {useEffect, useState, useRef} from "react"
 import {createRoot} from "react-dom/client"
-import {BrowserRouter, Route, Routes} from "react-router-dom"
+import {HashRouter as Router, Route, Routes} from "react-router-dom"
 import {Home, Header, Footer, GrammarPointsList} from "./components"
 
 const App = () => {
 
     return (
-        <BrowserRouter>
+        <Router>
             <div>
                 <Header/>
                     <Routes>
@@ -15,7 +14,7 @@ const App = () => {
                     </Routes>
                 <Footer />
             </div>
-        </BrowserRouter>
+        </Router>
     )
 }
 
